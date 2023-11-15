@@ -37,8 +37,9 @@ class Pessoa:
         if self.tipo == "admin":
             return True
         else:
+            print("Você não tem permissão para fazer isso \n")
             return False
 
 
 mock = Pessoa("Pessoa Mock", "Rua Mock", 20, "999999999", "admin", 100.0)
-mock.mostrarSaldo()
+# mock.mostrarSaldo()
