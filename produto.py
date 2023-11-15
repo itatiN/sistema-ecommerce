@@ -1,3 +1,5 @@
+from Pessoa import Pessoa
+
 class Produto:
     def __init__(self, nome, preco, descricao, tipo):
         self.nome = nome
@@ -30,13 +32,20 @@ class Produto:
         self.__Informacoes()
 
     def atualizaPreco(self, novoPreco):
-        self.__atualizarPreco(novoPreco)
+        if PessoaMock.mostrarTipo():
+            self.__atualizarPreco(novoPreco)
 
 
 # conceito de mock:
 # objeto com o intuito de simular um objeto real
 
-mock = Produto("Produto Mock", 10.0, "Este e um produto Mock", "Mock")
-mock.exibeInformacoes()
-mock.atualizaPreco(20.0)
-mock.exibeInformacoes()
+ProdutoMock = Produto("Produto Mock", 10.0, "Este e um produto Mock", "Mock")
+PessoaMock = Pessoa("Pessoa Mock", "Rua Mock", 20, "999999999", "admin", 100.0)
+
+ProdutoMock.exibeInformacoes()
+ProdutoMock.atualizaPreco(20.0)
+ProdutoMock.exibeInformacoes()
+
+PessoaMock = Pessoa("Pessoa Mock", "Rua Mock", 20, "999999999", "cliente", 100.0)
+ProdutoMock.atualizaPreco(30.0)
+ProdutoMock.exibeInformacoes()
