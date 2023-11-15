@@ -33,6 +33,12 @@ class Pessoa:
     def mostrarSaldo(self):
         print("Saldo: " + str(self.__saldo))
 
+    def mostrarTipo(self) -> bool:
+        if self.tipo == "admin":
+            return True
+        else:
+            return False
 
-mock = Pessoa("Pessoa Mock", "Rua Mock", 20, "999999999", "Mock", 100.0)
+
+mock = Pessoa("Pessoa Mock", "Rua Mock", 20, "999999999", "admin", 100.0)
 mock.mostrarSaldo()
